@@ -1,7 +1,7 @@
 - hosts: all
   tasks:
     - name: key for apt repos
-      apt_key: https://pkg.jenkins.io/debian/jenkins-ci.org.key
+      apt_key: url=https://pkg.jenkins.io/debian/jenkins-ci.org.key
     - name: jenkins repos
       apt_repository: repos='deb http://pkg.jenkins.io/debian-stable binary/' filename=jenkins
     - name: install jenkins
