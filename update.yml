@@ -1,5 +1,6 @@
 - name: update simple pour debian
-  hosts: all
+  hosts: localhost
+  become: True
   tasks:
     - apt: update_cache=yes valid_cache_time=3600 upgrade=yes
       when: ansible_osfamily == 'Debian'
