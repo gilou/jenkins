@@ -3,5 +3,5 @@
   connection: local
   become: true
   tasks:
-    - apt: update_cache=yes valid_cache_time=3600 upgrade=yes
+    - apt: update_cache=yes cache_valid_time=3600 upgrade=yes
       when: ansible_os_family == 'Debian'
