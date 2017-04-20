@@ -1,5 +1,6 @@
 - name: update simple pour debian
-  hosts: localhost
+  hosts: 127.0.0.1
+  connection: local
   become: true
   tasks:
     - apt: update_cache=yes valid_cache_time=3600 upgrade=yes
