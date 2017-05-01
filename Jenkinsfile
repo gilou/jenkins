@@ -6,7 +6,7 @@ node('localnode') {
     catch (e) {
       echo 'ansible not installed?'
       try {
-        sh 'pip install ansible'
+        sh 'pip install --user ansible'
       }
       catch (e2) {
         echo 'pip did not work :('
