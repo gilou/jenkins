@@ -1,4 +1,5 @@
 node('localnode') {
+  env.PATH = "${env.PATH}:${env.HOME}/.local/bin"
   stage('Test ansible') {
     try {
       sh 'ansible --version'
