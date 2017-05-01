@@ -1,6 +1,11 @@
 node('localnode') {
   stage('Test ansible') {
-    sh 'ansible --version'
+    try {
+      sh 'ansible --version'
+    }
+    catch (e) {
+      echo 'ansible not installed?'
+    }
   }
   stage('Run playbook') {
     ansiblePlaybook installation: 'ansible', limit: 'localhost', playbook: 'update.yml'
