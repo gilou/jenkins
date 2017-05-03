@@ -1,4 +1,4 @@
-node('localnode') {
+node {
   stage('Run playbook') {
     echo "PATH is : ${env.PATH}"
     ansiblePlaybook installation: 'ansible', limit: 'localhost', playbook: 'update.yml'
