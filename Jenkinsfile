@@ -5,7 +5,7 @@ node {
   }
   stage('Run playbook') {
     echo "PATH is : ${env.PATH}"
-    ansiblePlaybook installation: 'ansible', limit: 'localhost', playbook: "${param.PLAYBOOK}"
+    ansiblePlaybook installation: 'ansible', limit: 'localhost', playbook: "${env.PLAYBOOK}"
   }
   stage('Aftermath') {
     sh 'lsb_release -a'
